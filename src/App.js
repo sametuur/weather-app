@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import axios from 'axios';
+
+
 
 function App() {
-  return (
+
+  const options = { url: `https://api.openweathermap.org/geo/1.0/direct?q=Istanbul&limit=5&appid=190925de26b681b342d5d11d154df0e5`};
+
+  
+  
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p>istanbul</p>
+          </div>
+
+          <div className="temp">
+            <h1>60°F</h1>
+          </div>
+
+          <div className="description">
+            <p>Clouds</p>
+          </div>
+        </div>
+        <div className="bottom">
+          <div className="feels">
+            <b>65°F</b>
+            <p>Feels Like</p>
+          </div>
+
+          <div className="humidity">
+            <b>20%</b>
+            <p>Humidity</p>
+
+          </div>
+
+          <div className="wind">
+            <b>12 MPH</b>
+            <p>Winds Speed</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
